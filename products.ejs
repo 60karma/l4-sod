@@ -1,0 +1,28 @@
+<h2><%= role.toUpperCase()%> - Products</h2>
+<table border="1">
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.name %></td>
+        <td><%= p.description %></td>
+        <td><%= p.price %></td>
+    </tr>
+    <form method="POST"action="/<%= role %>/products">
+        <input  name="id" value="<%= p.id %>">
+        <input  name="name" value="<%= p.name %>">
+        <input  name="description" value="<%= p.description %>">
+        <input  name="price" value="<%= p.price %>">
+        <button type="submit">update</button>
+        </form>
+    <a href="/<%= role %>/products/delete<%= p.id %>">Delete</a>
+    </td>
+    </tr>
+    <% }) %>
+</table>
+<h3>Add New Product</h3>
+<form method="POST" action="/<%= role %>/products/add">
+    <input name="id" placeholder="id">
+    <input name="name" placeholder="name"required>
+    <input name="description" placeholder="description"required>
+    <input name="price" placeholder="price"required>
+    <button type="submit">Add</button>
+    </form>

@@ -1,0 +1,23 @@
+<h2>Admin - Users</h2>
+<table border="1">
+    <tr><th>ID</th><th>Username</th><th>Role</th><th>Ation</th></tr>
+    <% users.forEach(user => { %>
+    <tr>
+        <td><%= u.id %></td>
+        <td><%= u.username %></td>
+        <td><%= u.role %></td>
+        <td><a href="/admin/users/edit/<%= user.id %>">Delete</a></td>
+        </tr>
+        <% }) %>
+    </table>
+    <h3>Add New User</h3>
+    <form method="POST" action="/admin/users/add">
+                <input name="username" required placeholder="username">
+                <input name="password" required placeholder="password">
+                <select name="role">
+                    <option value="admin">Admin</option>
+                    <option value="student">Student</option>
+                    </select>
+                <button type="submit">Add</button>
+            </form>
+            
